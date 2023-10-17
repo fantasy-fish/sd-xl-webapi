@@ -93,6 +93,7 @@ def run_inference(prompt, init_image):
     final_image = pipe(
         prompt=prompt,
         image=init_image,
+        num_inference_steps=n_steps,
     ).images[0]
     img_data = io.BytesIO()
     final_image.save(img_data, "PNG")
